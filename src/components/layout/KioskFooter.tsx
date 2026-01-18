@@ -1,4 +1,4 @@
-import { ArrowLeft, Home, Phone } from 'lucide-react';
+import { ArrowLeft, Home } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 interface KioskFooterProps {
@@ -12,26 +12,20 @@ const KioskFooter = ({ showBack = true, showHome = true }: KioskFooterProps) => 
   const isHome = location.pathname === '/';
 
   return (
-    <footer className="w-full bg-card border-t border-border px-8 py-5">
-      <div className="flex items-center justify-between">
+    <footer className="w-full bg-card border-t border-border px-6 py-4">
+      <div className="flex items-center justify-between max-w-2xl mx-auto">
         {/* Back Button */}
         {showBack && !isHome ? (
           <button
             onClick={() => navigate(-1)}
             className="kiosk-btn-outline"
           >
-            <ArrowLeft className="w-6 h-6" />
+            <ArrowLeft className="w-5 h-5" />
             <span>Back</span>
           </button>
         ) : (
-          <div className="w-32" />
+          <div className="w-24" />
         )}
-
-        {/* Support */}
-        <div className="flex items-center gap-3 text-muted-foreground">
-          <Phone className="w-5 h-5" />
-          <span className="text-lg font-medium">Support: +91-9876543210</span>
-        </div>
 
         {/* Home Button */}
         {showHome && !isHome ? (
@@ -39,11 +33,11 @@ const KioskFooter = ({ showBack = true, showHome = true }: KioskFooterProps) => 
             onClick={() => navigate('/')}
             className="kiosk-btn-outline"
           >
-            <Home className="w-6 h-6" />
+            <Home className="w-5 h-5" />
             <span>Home</span>
           </button>
         ) : (
-          <div className="w-32" />
+          <div className="w-24" />
         )}
       </div>
     </footer>

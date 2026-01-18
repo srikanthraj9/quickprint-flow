@@ -11,10 +11,10 @@ const ErrorScreen = ({ errorMessage = 'Printer out of paper' }: ErrorScreenProps
 
   return (
     <KioskLayout showSteps={false} showBack={false}>
-      <div className="flex flex-col items-center gap-10 max-w-xl w-full">
+      <div className="flex flex-col items-center gap-8 max-w-lg w-full px-4">
         {/* Error Icon */}
-        <div className="w-32 h-32 bg-destructive/10 rounded-full flex items-center justify-center">
-          <AlertCircle className="w-20 h-20 text-destructive" />
+        <div className="w-28 h-28 bg-destructive/10 rounded-full flex items-center justify-center">
+          <AlertCircle className="w-16 h-16 text-destructive" />
         </div>
 
         {/* Title */}
@@ -22,17 +22,17 @@ const ErrorScreen = ({ errorMessage = 'Printer out of paper' }: ErrorScreenProps
           <h1 className="kiosk-title text-destructive mb-2">
             Error
           </h1>
-          <p className="kiosk-body text-foreground">
-            Reason: {errorMessage}
+          <p className="text-lg text-foreground">
+            {errorMessage}
           </p>
         </div>
 
         {/* Support Info */}
-        <div className="kiosk-card w-full text-center">
-          <p className="kiosk-body text-muted-foreground mb-4">
-            Please contact support for assistance
+        <div className="kiosk-card-elevated w-full text-center py-6">
+          <p className="text-base text-muted-foreground mb-4">
+            Please contact support
           </p>
-          <div className="flex items-center justify-center gap-3 text-primary">
+          <div className="flex items-center justify-center gap-2 text-primary">
             <Phone className="w-6 h-6" />
             <span className="text-2xl font-bold">+91-9876543210</span>
           </div>
@@ -43,7 +43,7 @@ const ErrorScreen = ({ errorMessage = 'Printer out of paper' }: ErrorScreenProps
           onClick={() => navigate('/')}
           className="kiosk-btn-primary w-full"
         >
-          <Home className="w-7 h-7" />
+          <Home className="w-6 h-6" />
           Go Home
         </button>
       </div>
